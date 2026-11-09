@@ -12,6 +12,9 @@
 <meta property="og:url" content="https://toratmayim.com/">
 <meta property="og:image" content="https://toratmayim.com/assets/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="en" href="https://toratmayim.com/">
+<link rel="alternate" hreflang="fr" href="https://toratmayim.com/fr/">
+<link rel="alternate" hreflang="x-default" href="https://toratmayim.com/">
 <link rel="icon" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,6 +33,7 @@
       <a class="wide" href="#texts">The texts</a>
       <a class="wide" href="#watch">Watch</a>
       <a class="wide" href="#faq">FAQ</a>
+      <a class="lang" href="fr/" hreflang="fr" lang="fr" data-lang="fr">FR</a>
       <a class="pill" href="#get">Get the app</a>
     </nav>
   </div>
@@ -48,7 +52,7 @@
         <p class="word-def"><span class="he">אֵין מַיִם אֶלָּא תּוֹרָה</span><span>"Water" means Torah. Bava Kamma 17a</span></p>
         <p class="hero-lede">Torat Mayim counts every word in each text and teaches the ones you'll meet most, first. Learn about a thousand words and you know nine out of ten words in the Torah.</p>
         <div class="cta" id="get">
-          <a class="button" href="https://apps.apple.com/app/id6832380234">
+          <a class="button" href="https://apps.apple.com/app/id6832461256">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
             <span class="stack"><small>Coming soon on the</small>App Store</span>
           </a>
@@ -305,7 +309,7 @@
       <span class="he">הוֹי כָּל צָמֵא לְכוּ לַמַּיִם</span>
       <h2>All who are thirsty, come.</h2>
       <div class="cta">
-        <a class="button" href="https://apps.apple.com/app/id6832380234">
+        <a class="button" href="https://apps.apple.com/app/id6832461256">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
           <span class="stack"><small>Coming soon on the</small>App Store</span>
         </a>
@@ -318,12 +322,19 @@
 <footer class="foot">
   <div class="wrap">
     <a class="brand" href="./"><img src="assets/icon-256.png" alt="" width="36" height="36"><span>Torat Mayim</span></a>
-    <nav aria-label="Footer"><a href="support/">Support</a><a href="privacy/">Privacy Policy</a><a href="#sources">Sources</a></nav>
+    <nav aria-label="Footer"><a href="support/">Support</a><a href="privacy/">Privacy Policy</a><a href="#sources">Sources</a><a href="fr/" hreflang="fr" lang="fr" data-lang="fr">Français</a></nav>
     <p class="credit">Built by David Lebee · © 2026</p>
   </div>
 </footer>
 
 <script>
+  // French phones go to /fr/ on a first visit; a click on a language link is remembered.
+  (() => {
+    let chosen = null;
+    try { chosen = localStorage.getItem("lang"); } catch (e) {}
+    if (!chosen && /^fr\b/i.test(navigator.language || "")) location.replace("fr/" + location.hash);
+    document.querySelectorAll("[data-lang]").forEach(a => a.addEventListener("click", () => { try { localStorage.setItem("lang", a.dataset.lang); } catch (e) {} }));
+  })();
   // Reveals fade up as they scroll into view; [data-speed] elements drift a little
   // with scroll. Both stay off, and the reel stops autoplaying, for reduced motion.
   (() => {

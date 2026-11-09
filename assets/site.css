@@ -64,6 +64,7 @@ p { margin: 0; }
 .top nav { display: flex; align-items: center; gap: 22px; font-size: 16px; }
 .top nav a { text-decoration: none; color: var(--mute); }
 .top nav a:hover, .top nav a[aria-current] { color: var(--ink); }
+.top nav .lang { font-weight: 700; letter-spacing: .06em; }
 .pill { white-space: nowrap; background: var(--ink); color: var(--page) !important; padding: 8px 16px; border-radius: 999px; font-weight: 600; }
 .pill:hover { background: var(--gold-deep); }
 @media (max-width: 820px) { .top nav .wide { display: none; } }
