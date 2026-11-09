@@ -1,5 +1,5 @@
-# teiva-public
+# torat-mayim-public
 
-The Teiva website, privacy policy and support page, served by GitHub Pages at https://dlebee.github.io/teiva-public/
+The Torat Mayim website, privacy policy and support page, served by GitHub Pages at https://dlebee.github.io/torat-mayim-public/
 
-The home page has slots for the showreel and screenshots: drop `assets/teiva-reel.mp4`, `assets/teiva-reel-poster.jpg` and `assets/shots/home.webp` in and they show in the phone frames. Until then the app icon shows.
+The home page plays `assets/torat-mayim-reel.mp4` (poster `assets/torat-mayim-reel-poster.jpg`) and shows screenshots from `assets/shots/`. Until they exist, the app icon shows.
